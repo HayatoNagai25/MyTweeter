@@ -22,13 +22,12 @@ class PasswordResetsController < ApplicationController
     def update
         @customer = Customer.find_signed(params[:token], purpose: "password_reset")
         if @customer.update(password_params)
-            redirect_to sign_in_path, noticeL "Your password was reset successfully. Please sign in."
+            redirect_to sign_in_path, notice: "Your password was reset successfully. Please sign in."
         else
             render :edit, status: :bad_request
         end
 
     end
-end
 
 private
 

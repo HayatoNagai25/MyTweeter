@@ -1,0 +1,9 @@
+<% if @current_customer == @customer %>
+   <h5><%= "#{@current_customer.username}'s page" %></h5>
+<% elsif @current_customer.followees.include?(@customer) %>
+   <h5><%= button_to "Un-follow #{@customer.username}",     
+       unfollow_customer_path, method: "POST" %></h5>
+<% else %>
+   <h5><%= button_to "Follow #{@customer.username}", follow_customer_path, 
+       method: "POST"  %></h5>
+<% end %>

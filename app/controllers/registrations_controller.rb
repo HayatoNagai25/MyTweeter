@@ -9,7 +9,8 @@ class RegistrationsController < ApplicationController
             session[:customer_id] = @customer.id
             redirect_to root_path, notice: "Successfully Created an Account"
         else
-            render :new, status: :unprocessable_entity
+            flash[:alert] = "Something went wrong"
+            render :new
         end
     end
 
