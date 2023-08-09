@@ -18,7 +18,15 @@ Rails.application.routes.draw do
 
   get "tweets", to: "tweets#index"
 
+  get "profile", to: "profile#index"
+
   resources :tweets
+  resources :relationships, only: [:create, :destroy]
+  resources :customers do
+    member do
+      get :following, :followers
+    end
+  end
 
   root to: "main#index"
 

@@ -14,6 +14,10 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <%= link_to "View My Profile", profile_path, class: "nav-link" %>
+                </li>
+
                 <% if Current.customer %>
                 <li class="nav-item">
                     <span><%= link_to Current.customer.email, edit_password_path, class: "nav-link" %></span>

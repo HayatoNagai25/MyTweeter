@@ -1,0 +1,14 @@
+<div class="stats">
+  <a href="<%= following_customer_path(@customer) %>">
+    <strong id="following" class="stat">
+      <%= @customer.followed_customers.count %>
+    </strong>
+    following
+  </a>
+  <a href="<%= followers_customer_path(@customer) %>">
+    <strong id="followers" class="stat">
+      <%= @customer.followers.count %>
+    </strong>
+    followers
+  </a>
+</div>

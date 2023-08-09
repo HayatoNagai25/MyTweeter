@@ -1,0 +1,12 @@
+<a href="<%= customer_path(current_customer) %>">
+  <%= gravatar_for current_customer, size: 52 %>
+</a>
+<h1>
+  <%= current_customer.name %>
+</h1>
+<span>
+  <%= link_to "view my profile", current_customer %>
+</span>
+<span>
+  <%= pluralize(current_customer.microposts.count, "micropost") %>
+</span>
